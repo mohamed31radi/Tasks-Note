@@ -43,10 +43,14 @@ class MyThemeData{
       )
     ),
      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-         backgroundColor: Colors.white,
+       elevation: 0,
+         backgroundColor: Colors.transparent,
          selectedItemColor: primaryColor,
          unselectedItemColor: Colors.grey
      ),
+   floatingActionButtonTheme: FloatingActionButtonThemeData(
+     backgroundColor: primaryColor,
+   )
   );
 
  static ThemeData darkTheme=ThemeData(
