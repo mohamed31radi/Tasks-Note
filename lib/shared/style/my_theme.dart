@@ -8,24 +8,24 @@ class MyThemeData{
  static ThemeData lightTheme=ThemeData(
    primaryColor: primaryColor,
    scaffoldBackgroundColor:bkgColorGreen,
-   colorScheme: ColorScheme(
+   colorScheme: const ColorScheme(
        brightness: Brightness.light,
        primary: primaryColor,
-       onPrimary: Colors.white,
+       onPrimary: colorBlack,
        secondary: bkgColorGreen,
        onSecondary: Colors.white,
        error: Colors.red,
-       onError: Colors.white,
+       onError: Colors.blue,
        background: bkgColorGreen,
        onBackground: primaryColor,
        surface: Colors.grey,
-       onSurface: Colors.white,
+       onSurface: colorBlack,
    ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: primaryColor,
       iconTheme: IconThemeData(color: Colors.white),
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       headline1: TextStyle(
         fontSize: 25,
         fontWeight: FontWeight.bold,
@@ -42,42 +42,51 @@ class MyThemeData{
           color: primaryColor
       )
     ),
-     bottomNavigationBarTheme: BottomNavigationBarThemeData(
+     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
        elevation: 0,
          backgroundColor: Colors.transparent,
          selectedItemColor: primaryColor,
          unselectedItemColor: Colors.grey
      ),
-   floatingActionButtonTheme: FloatingActionButtonThemeData(
+   floatingActionButtonTheme: const FloatingActionButtonThemeData(
      backgroundColor: primaryColor,
-   )
+     shape: StadiumBorder(
+       side: BorderSide(
+         color: Colors.white,
+         width: 4,
+       )
+     )
+   ),
+     bottomSheetTheme: BottomSheetThemeData(
+         backgroundColor: Colors.white,
+     ),
   );
 
  static ThemeData darkTheme=ThemeData(
    primaryColor: primaryColor,
    scaffoldBackgroundColor:bkgDarkColor,
-   colorScheme: ColorScheme(
+   colorScheme: const ColorScheme(
      brightness: Brightness.light,
      primary: primaryColor,
      onPrimary: Colors.white,
      secondary: bkgDarkColor,
-     onSecondary: Colors.white,
-     error: Colors.red,
-     onError: Colors.white,
+     onSecondary: navBkgDarkColor,
+     error: colorRed,
+     onError: colorBlue,
      background: bkgDarkColor,
      onBackground: primaryColor,
      surface: Colors.grey,
-     onSurface: Colors.white,
+     onSurface: colorBlack,
    ),
-   appBarTheme: AppBarTheme(
+   appBarTheme: const AppBarTheme(
      color: primaryColor,
      iconTheme: IconThemeData(color: colorBlack),
    ),
-   textTheme: TextTheme(
+   textTheme: const TextTheme(
        headline1: TextStyle(
          fontSize: 25,
          fontWeight: FontWeight.bold,
-         color: colorBlack,
+         color: Colors.white,
        ),
        subtitle1: TextStyle(
            fontSize: 20,
@@ -87,13 +96,26 @@ class MyThemeData{
        subtitle2: TextStyle(
            fontSize: 15,
            fontWeight: FontWeight.bold,
-           color: primaryColor
+           color: Colors.white
        )
    ),
-   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-       backgroundColor: navBkgDarkColor,
+   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+     elevation: 0,
+       backgroundColor: Colors.transparent,
        selectedItemColor: primaryColor,
-       unselectedItemColor: Colors.white
+       unselectedItemColor: Colors.white,
    ),
+     floatingActionButtonTheme: const FloatingActionButtonThemeData(
+       backgroundColor: primaryColor,
+         shape: StadiumBorder(
+             side: BorderSide(
+               color: colorBlack,
+               width: 4
+             )
+         )
+     ),
+     bottomSheetTheme: BottomSheetThemeData(
+         backgroundColor: navBkgDarkColor,
+     ),
  );
 }
